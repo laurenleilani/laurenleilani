@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOONPR1SM'S PARTY! Character Survey</title>
+  <link rel="stylesheet" href="surveyformstyles.css">
+ 
+  </head>
+
+<body>
+   
+    
+
+  
+     <form id="survey-form">
+      <h1 id="title"><span aria-hidden="true">❀</span> MOONPR1SM'S PARTY! <span aria-hidden="true">❀</span> </h1> 
+    <h2>Character Survey</h2>
+         <p id="description">Welcome to the party! MOONPR1SM'S PARTY is the name I chose for building a world for all of my original characters to live in together. I haven't totally worked out exactly what it's gonna be yet, but I think I'd like to start by making introductions! I want to create a bio and a little comic for each character, and I would love for you to help me choose who to start with!
+    <br>   <br>
+    Below is a survey you can fill out to help me decide who gets the first entry into the party! Who would you like to get to know first?
+    </p>
+    <fieldset>
+     <legend><h2><span><span aria-hidden="true">❀</span> Who Are You? <span aria-hidden="true">❀</span></span></h2></legend>
+   <label id="name-label">
+    <label for="name"><span><span aria-hidden="true">❀</span> Name <span aria-hidden="true">❀</span></span> </label> <input id="name" type="text" name="name" placeholder="Your Name" required></label>
+    <br>
+<label id="number-label">
+    <label for="number"><span><span aria-hidden="true">❀</span> Age <span aria-hidden="true">❀</span></span> </label> <input id="number" type="number" name="age" placeholder="Age" min="1" max="120" required></label>
+    <br>
+    <label id="email-label">
+     <label for="email"><span><span aria-hidden="true">❀</span> Email <span aria-hidden="true">❀</span></span> </label> <input id="email" type="email" name="email" placeholder="email@whatever.com" required></label>
+     <br>
+     <span><span aria-hidden="true">❀</span> Are you really silly? <span aria-hidden="true">❀</span></span>
+     <select id="dropdown">
+     <option>Yes</option>
+     <option>No</option>
+     <option>REALLY silly</option>
+     </select>
+       </fieldset>
+       <br>
+       
+         <fieldset>
+  <legend><h2><span><span aria-hidden="true">❀</span> Choose A Character! <span aria-hidden="true">❀</span></span></h2></legend>
+     <br>
+<!--characters-->
+
+        <div class="character-grid">
+           <label for="spikebunny">
+      <img src="https://moonpr1sm.neocities.org/art/survey%20stickers/Spikebunny_.png" alt="Spikebunny">
+     <h2>Spikebunny</h2>
+      <input type="radio" id="spikebunny" name="character" value="Spikebunny">
+  
+    </label>
+    
+       <label for="snailish">
+      <img src="https://moonpr1sm.neocities.org/art/survey%20stickers/Snailish%202.png" alt="Snailish">
+     <h2>Snailish</h2>
+      <input type="radio" id="snailish" name="character" value="Snailish"> </label>
+    
+    
+     <label for="binky">
+      <img src="https://moonpr1sm.neocities.org/art/survey%20stickers/Binky.png" alt="Binky">
+       <h2>Binky</h2>
+      <input type="radio" id="binky" name="character" value="Binky"> </label>
+   
+      
+       <label for="tigerbeef">
+      <img src="https://moonpr1sm.neocities.org/art/survey%20stickers/Tiga_Beef.png" alt="Tiger Beef">
+      <h2>Tiger Beef</h2>
+      <input type="radio" id="tigerbeef" name="character" value="TigerBeef"> </label>
+     
+        <label for="snowcherry">
+      <img src="https://moonpr1sm.neocities.org/art/survey%20stickers/snowcherry.png" alt="Snow Cherry">
+      <h2>Snow Cherry</h2>
+      <input type="radio" id="snowcherry" name="character" value="SnowCherry"> </label>
+      
+      <label for="moonpr1sm">
+      <img src="https://moonpr1sm.neocities.org/art/survey%20stickers/MP.png" alt="MOONPR1SM"><h2>MOONPR1SM </h2>
+      <input type="radio" id="moonpr1sm" name="character" value="MoonPr1sm">
+     </label>
+    </fieldset>  
+    </div>
+  <fieldset>
+  
+
+   <legend><h2><span><span aria-hidden="true">❀</span> What kinda character should I make next? <span aria-hidden="true">❀</span></h2></legend>
+  
+    <label for="magicalgirl"><input type="checkbox" id="magicalgirl" name="charactertype" value="Magical Girl">Magical Girl</label>
+
+     <label for="hybridcreature"><input type="checkbox" id="hybridcreature" name="charactertype" value="Hybrid Creature">Hybrid Creature</label>
+
+     <label for="anthroobject"><input type="checkbox" id="anthroobject" name="charactertype" value="Anthropomorphic Object">Anthropomorphic Object</label>
+     <br>     <br>
+    <span><span aria-hidden="true">❀</span> Suggest Something Else: <span aria-hidden="true">❀</span></span>
+    
+<textarea placeholder="What do you think?"></textarea>
+<br>
+<br>
+
+  </form>
+    <br> 
+  <button type="submit" id="submit">Submit!</button>
+</fieldset>
+
+</body>
+</html>
