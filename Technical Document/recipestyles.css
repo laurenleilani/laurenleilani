@@ -1,0 +1,91 @@
+@font-face {
+    font-family: IBM Plex Mono;
+    src: url('https://moonpr1sm.neocities.org/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: ChiKareGo;
+    src: url('https://moonpr1sm.neocities.org/fonts/ChiKareGo.ttf');
+}
+
+body,
+html {
+
+    background-color: #ff65a6;
+    background-image: url("https://moonpr1sm.neocities.org/img/funfetti_cake_BG.png");
+    margin: 0;
+    color: #000;
+    padding: 0;
+    font-family: IBM Plex Mono, Arial, sans-serif;
+}
+
+.content-container {
+    background-color: linen;
+    width: 80%;
+    max-width: 800px;
+    padding: 2% 5%;
+    margin: 2% auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+#navbar {
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul li {
+        padding: 0.5em;
+        text-align: center;
+    }
+
+    a {
+        display: block;
+
+        padding: 10px 30px;
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        font-family: ChiKareGo;
+        font-size: larger;
+    }
+
+    a:hover {
+        background-color: #decfff;
+    }
+}
+
+
+header {
+    color: #000;
+    font-family: ChiKareGo;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: thin;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    body {
+        font-size: 1em;
+    }
+
+    #navbar ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: auto;
+        justify-content: center;
+    }
+
+    #navbar ul li {
+        margin: 0 10px;
+    }
+}
