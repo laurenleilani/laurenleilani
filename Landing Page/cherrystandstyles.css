@@ -11,7 +11,6 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    max-width: 100%;
 
 
 }
@@ -22,7 +21,7 @@ html {
     font-family: 'FOT-RodinBokutoh', Arial, sans-serif;
     background-color: #faf0e6;
     color: #5a404e;
-    display: flex;
+
 
 
 }
@@ -32,6 +31,10 @@ html {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
 }
 
 /* Header + Nav Stuff */
@@ -40,7 +43,10 @@ html {
     top: 0;
     background-color: rgba(255, 113, 103, 0.8);
     width: 100%;
+    max-width: 100%;
     height: auto;
+    margin: 0;
+    padding: 0;
 
     font-weight: bold;
     font-size: larger;
@@ -50,7 +56,7 @@ html {
 #header img {
     height: 40px;
     width: auto;
-    margin-right: 20px;
+
 }
 
 nav ul {
@@ -78,13 +84,13 @@ a:hover {
 
 h1 {
     text-align: center;
-    font-sizw: 2em;
+    font-size: 2em;
     color: #000;
 }
 
 h2 {
     text-align: center;
-    font-sizw: 1.5em;
+    font-size: 1.5em;
     color: #000;
 }
 
@@ -237,7 +243,10 @@ section {
 #form input[type=email] {
     width: 100%;
     padding: 10px;
+    margin-top: 0;
+    margin-right: 0;
     margin-bottom: 20px;
+    margin-left: 0;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
@@ -256,65 +265,78 @@ section {
     background-color: lightgray;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
+    .content-container {
+        align-items: center;
+        margin: auto;
+        padding: 5px;
+    }
+
+    #video,
+    #map1,
+    #map2 {
+        width: 90%;
+    }
+
     nav ul {
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     nav li {
-        margin: 10px 0;
+        padding: 10px 0;
     }
 
-    nav a {
-        font-size: 16px;
+    p,
+    #img-caption1,
+    #img-caption2 {
+        width: auto;
+        padding: 0 10px;
     }
 
-    #video {
-        width: 90%;
+    .menu-item img {
+        width: 100%;
+        max-width: 150px;
     }
 
-    #map1,
-    #map2 {
-        width: 90%;
+    .price img {
+        max-width: 20px;
+        margin-right: 5px;
     }
 }
 
 @media (max-width: 480px) {
-    nav a {
-        font-size: 14px;
+
+    h1,
+    h2 {
+        font-size: 1.5em;
     }
 
-    #video {
-        width: 95%;
-    }
-
+    #video,
     #map1,
-    #map2,
-    #video {
+    #map2 {
         width: 95%;
     }
 
     p,
     #img-caption1,
     #img-caption2 {
-        font-size: 12px;
+        font-size: 0.9em;
     }
 
-    .menu-item,
-    .menu-item-description {
-        align-items: center;
+    .menu-item-description,
+    .menu-item-name,
+    .price {
         text-align: center;
     }
 
-    .menu-item img {
-        width: 80%;
-        max-width: 150px;
-    }
-
     .price img {
-        width: 20px;
+        max-width: 20px;
         margin-right: 5px;
+
+        #form input[type=email],
+        #submit {
+            width: 90%;
+        }
     }
-}
