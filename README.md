@@ -1,7 +1,7 @@
 🌷 Hello, I'm Lauren Leilani Iona aka moonpr1sm! 🌷 
 
 I'm an artist and aspiring web developer. I got into making websites in 2023 after discovering Neocities & the Web Revival scene.
-I love the spirit of the early Internet, when things felt more personal and creative. I'm into retro aesthetics but really love the
+I love the spirit of the early Internet, when things felt more personal and creative. I'm into retro aesthetics but also enjoy the
 challenge of trying to blend that with modern practices for efficiency & accessibility reasons.
 
 🌻 updated 3/17/2024 🌻
