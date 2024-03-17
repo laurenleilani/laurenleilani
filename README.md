@@ -14,21 +14,37 @@ Wanna see what I've been working on?
 🌸 projects in this repo 🌸:
 
 portfolio: more about me & my projects [View Live](https://moonpr1sm.neocities.org/portfolio/portfolio)
+
+
 moonpr1sm's animal crossing shrine: an homage to my ACNH island [View Live](https://moonpr1sm.neocities.org/animalcrossing/animalcrossingtribute)
+
+
 recipe page: a recipe to make one of my fav meals, pumpkin vegan mac + cheese with roasted broccoli [View Live](https://moonpr1sm.neocities.org/recipes/vegan-pumpkin-mac-and-cheese-with-roasted-broccoli)
+
+
 original characters survey form: baby's first form  [View Live](https://moonpr1sm.neocities.org/survey)
+
+
 cherry stand landing page: a site for a fictional food stand [View Live](https://moonpr1sm.neocities.org/animalcrossing/cherrystand#the-cherry-stand)
+
+
 
 🌼 other projects 🌼
 
 moonpr1sm: my personal website, hosts an art gallery for my illustrations [View Live](https://moonpr1sm.neocities.org/)
+
+
 cult objects: a homepage for my band, cult objects [View Live](https://cultobjects.neocities.org/)
+
+
 
 💌 Let's Connect! 💌
 
 I love making new connections! Feel free to reach out:
 
 [Email](mailto:laurenleilanii@gmail.com)
+
+
 [Mastodon](https://mastodon.social/@moonpr1sm)
 
 <!--
