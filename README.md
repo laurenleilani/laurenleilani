@@ -15,7 +15,7 @@ Wanna see what I've been working on?
 
 portfolio: more about me & my projects [View Live](https://moonpr1sm.neocities.org/portfolio/portfolio)
 
-EXP Tracker: a gamified to-do app idea [View Live](EXP Tracker/index.html)
+EXP Tracker: a gamified to-do app idea [View Live](https://moonpr1sm.neocities.org/games/exp/)
 
 moonpr1sm's animal crossing shrine: an homage to my ACNH island [View Live](https://moonpr1sm.neocities.org/animalcrossing/animalcrossingtribute)
 
