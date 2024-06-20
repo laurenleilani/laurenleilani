@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>EXP Tracker</title>
+    <link rel="stylesheet" href="https://moonpr1sm.neocities.org/games/exp/styles.css">
+    <link rel="manifest" href="https://moonpr1sm.neocities.org/games/exp/service-worker.js">
+    <script src="https://moonpr1sm.neocities.org/games/exp/script.js" type="text/javascript"></script>
+  
+</head>
+
+<body>
+    <div class="app-container">
+        <h1>EXP Tracker</h1>
+        <div class="theme-dropdown">
+            <button class="theme-toggle-button" onclick="toggleThemeOptions()">Choose Theme</button>
+            <div class="theme-options" id="theme-options">
+                <button onclick="setTheme('light')">Light Mode</button>
+                <button onclick="setTheme('dark')">Dark Mode</button>
+                <button onclick="setTheme('toad')">Toad Mode</button>
+            </div>
+        </div>
+        <p>Welcome to EXP Tracker!</p>
+        <p>'EXP' is short for "experience" or "experience points", a common mechanic in video games where you play as a character that can level up.</p>
+        <p>You are a real character, you know? You probably have some things you'd like to get done. Well, here is a place where you can organize those thoughts. Each time you complete a task you'll get some EXP, and you might even level up!</p>
+        <p>What happens if you level up?</p>
+        <p>That is up to you. I suggest treating yourself to something fun each time! You deserve it!</p>
+
+        <h2>Task List</h2>
+        <div class="sort-menu">
+            <button class="sort-button" onclick="toggleSortMenu()">Sort</button>
+            <div class="sort-options" id="sort-options" style="display: none;">
+                <button onclick="sortTasks('newest')">Newest First</button>
+<button onclick="sortTasks('oldest')">Oldest First</button>
+
+            </div>
+        </div>
+        <br>
+        <div class="task-input">
+            <input type="text" id="new-task" placeholder="New task...">
+            <select id="task-difficulty">
+                <option value="" disabled selected>Select Difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="nightmare">Nightmare</option>
+            </select>
+            <button class="add-button" onclick="addTask()" aria-label="Add Task"></button>
+        </div>
+        <ul id="task-list"></ul>
+
+        <div class="stats">
+            <p>EXP: <span id="exp">0</span></p>
+            <p id="exp-to-next">100 EXP to next level</p>
+            <p>Level: <span id="level">1</span></p>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <div class="fairy-container">
+            <img src="https://moonpr1sm.neocities.org/games/exp/img/Fairy.png" class="fairy" id="fairy1" alt="Fairy 1">
+            <img src="https://moonpr1sm.neocities.org/games/exp/img/Fairy2.png" class="fairy" id="fairy2" alt="Fairy 2">
+        </div>
+
+        <!--rewards section-->
+        <h2>Rewards</h2>
+        <p id="reward-description">
+            Each time you level up, you'll receive a Reward Badge! You can collect and exchange these for rewards here. You get to decide what your reward is and how many badges it is worth - choose something that motivates you!
+        </p>
+        <ul id="reward-list"></ul>
+
+        <div class="reward-input">
+            <input type="text" id="new-reward" placeholder="Choose a Reward!">
+            <select id="reward-tier">
+                <option value="" disabled selected>Select Reward Tier</option>
+                <option value="small">Small Reward (1 Reward Badges)</option>
+                <option value="big">Big Reward (5 Reward Badges)</option>
+                <option value="legendary">Legendary Reward (10 Reward Badges)</option>
+            </select>
+            <button class="add-reward-button" onclick="addReward()" aria-label="Add Reward"></button>
+        </div>
+        <ul id="reward-list"></ul>
+
+        <div class="message-box" id="reward-message-box">
+            <img id="reward-fairy-img" src="" alt="Fairy" style="width: 64px; margin-bottom: 10px;">
+            <p id="reward-message-content"></p>
+            <button id="confirm-reward-button" onclick="confirmReward()">Yes</button>
+            <button onclick="closeRewardMessageBox()">No</button>
+        </div>
+
+        <h2>Reward Badges</h2>
+        <div class="badges" id="badges"></div>
+
+        <h2>Task History and Statistics</h2>
+        <button class="toggle-button" onclick="toggleHistoryStats(event)">Show History and Statistics</button>
+        <div class="history-stats" id="history-stats" style="display: none;">
+            <div class="stats">
+                <p>Total Tasks Completed: <span id="total-tasks">0</span></p>
+                <p>Tasks Completed This Week: <span id="weekly-tasks">0</span></p>
+                <p>Tasks Completed This Month: <span id="monthly-tasks">0</span></p>
+                <p>Reward Badges Earned: <span id="rainbow-hearts-earned">0</span></p>
+                <p>Reward Badges Spent: <span id="rainbow-hearts-spent">0</span></p>
+                <p>Rewards Redeemed: <span id="rewards-redeemed">0</span></p>
+            </div>
+            <div class="history">
+                <h3>Task and Reward History</h3>
+                <ul id="history-list"></ul>
+            </div>
+        </div>
+
+        <button class="toggle-button" onclick="toggleArchiveStats(event)">Show Archive</button>
+        <div class="archive-stats" id="archive-stats" style="display: none;">
+            <h2>Archived Task History</h2>
+            <ul id="archive-list"></ul>
+        </div>
+
+        <div class="message-box" id="message-box">
+            <p id="message-content"></p>
+            <button id="move-task-button" onclick="moveTaskBack()">Move Back to Task List</button>
+            <button id="delete-task-button" onclick="deleteTaskPermanently()">Delete Permanently</button>
+            <button onclick="closeMessageBox()">Close</button>
+        </div>
+
+        <div class="clear-button-container">
+            <button class="clear-button" onclick="showBombConfirmation()" aria-label="Clear All"></button>
+            <button class="archive-button" onclick="showArchiveConfirmation()" aria-label="Archive History"></button>
+            <p id="clear" class="clear-text">Click the BOMB to reset all progress! You will lose all EXP...</p>
+            <p id="archive" class="clear-text">Click the BOX to archive history! Your EXP will be saved!</p>
+        </div>
+
+        <div class="message-box" id="archive-confirmation-box">
+            <p>Are you sure you want to archive the history? This action will save your EXP.</p>
+            <button onclick="confirmArchive()">Yes</button>
+            <button onclick="closeArchiveConfirmation()">No</button>
+        </div>
+
+        <div class="message-box" id="bomb-confirmation-box">
+            <p>Are you sure you want to delete all progress? This can't be undone!</p>
+            <button onclick="clearAll()">Yes</button>
+            <button onclick="closeBombConfirmation()">No</button>
+        </div>
+
+        <button onclick="exportData()">Export Data</button>
+        <input type="file" id="import-file" style="display: none;" onchange="importData(event)" />
+        <button onclick="document.getElementById('import-file').click()">Import Data</button>
+        <div class="button-container">
+            <button id="datainfo" onclick="openInfoModal()">Data Information</button>
+        </div>
+
+        <div id="info-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeInfoModal()">&times;</span>
+                <h2>Data Storage Information</h2>
+                <p>This app uses your browser's local storage to save your tasks, EXP, levels, and other progress. Here are some key points to note:</p>
+                <ul>
+                    <li>Your data is saved only on the device and browser you are using.</li>
+                    <li>The data persists until you clear your browser's local storage or use the "Clear All" function in the app.</li>
+                    <li>You can export your data as a JSON file and import it later if needed.</li>
+                    <li>Using the "BOMB" button will reset all progress, including your tasks, EXP, levels, and history.</li>
+                    <li>The "BOX" button allows you to move your task history to an archive without losing EXP.</li>
+                </ul>
+                <p>If you have any questions or need help, feel free to <a href="mailto:moonpr1sm1986@gmail.com">reach out</a>! </p>
+            </div>
+        </div>
+        <br>
+        <footer>EXP Tracker by moonpr1sm - 2024</footer>
+    </div>
+     <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/exptracker/service-worker.js').then(function(registration) {
+          console.log('Service Worker registered with scope:', registration.scope);
+        }, function(error) {
+          console.log('Service Worker registration failed:', error);
+        });
+      });
+    }
+  </script>
+   </body>
+
+</html>
